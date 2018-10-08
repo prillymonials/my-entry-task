@@ -1,0 +1,49 @@
+@import "./variable";
+
+.app-login-header {
+  padding-top: 69px;
+  flex-grow: 1;
+
+  .app-login-header-subtitle,
+  .app-login-header-title {
+    text-align: center;
+  }
+
+  .app-login-header-subtitle {
+    margin: 0;
+    color: $primary-color;
+    font-size: 16px;
+  }
+
+  .app-login-header-title {
+    margin-top: 16px;
+    margin-bottom: 37px;
+    color: $primary-color;
+    font-size: 24px;
+  }
+
+  .app-login-header-outer-circle {
+    border: solid 1px rgba($primary-color, 0.5);
+    padding: 2px;
+    width: 64px;
+    height: 64px;
+    margin: auto;
+    border-radius: 50%;
+  }
+
+  .app-login-header-inner-circle {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: solid 1px $primary-color;
+    border-radius: 50%;
+    padding: 10px;
+
+    & > svg {
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      fill: $primary-color;
+    }
+  }
+}

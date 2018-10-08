@@ -1,0 +1,44 @@
+@import "./variable";
+
+@mixin fullScreenRule {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+}
+
+@mixin mainHeaderIconRule {
+  width: 24px;
+  height: 24px;
+  box-sizing: content-box;
+}
+
+@mixin buttonRule {
+  border: none;
+  margin: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin channelNameRule {
+  font-size: 12px;
+  padding: 3px 10px;
+  border: 1px solid $secondary-color;
+  border-radius: 20px;
+  color: $secondary-color;
+}
+
+@mixin postTitleRule {
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 12px 0;
+  line-height: 24px;
+  color: $tertiary-color;
+}
+
+@mixin avatarImageRule {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

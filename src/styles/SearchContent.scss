@@ -1,0 +1,120 @@
+@import "./variable";
+
+.app-search-container {
+  margin-top: 10px;
+
+  &.app-search-channel {
+    flex-grow: 1;
+  }
+
+  .app-search-title {
+    text-align: center;
+
+    & > span {
+      border-bottom: 0.5px solid $placeholder-color;
+      padding: 2px;
+      color: $placeholder-color;
+      font-weight: bolder;
+      font-size: 12px;
+    }
+  }
+
+  .app-search-date-list {
+    margin: 20px 5px 0 15px;
+
+    span {
+      color: #fff;
+      margin: 3px 2px;
+      padding: 3px 6px;
+      font-size: 12px;
+      font-weight: bolder;
+      display: inline-block;
+      cursor: pointer;
+
+      &.active {
+        color: $tertiary-color;
+        background-color: $lime-color;
+        border-radius: 25px;
+      }
+    }
+  }
+
+  .app-search-channel-list {
+    margin: 20px 5px 0 15px;
+
+    span {
+      color: #fff;
+      margin: 4px 3px;
+      padding: 4px 10px;
+      font-size: 12px;
+      display: inline-block;
+      border: 1px solid $light-purple-color;
+      border-radius: 25px;
+      cursor: pointer;
+
+      &.active {
+        color: $tertiary-color;
+        background-color: $lime-color;
+        border: none;
+        font-weight: bolder;
+      }
+    }
+  }
+
+  .app-search-date-later {
+    .app-search-popover {
+      background: #fff;
+      margin-top: 10px;
+      padding: 5px;
+      margin-right: 10px;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      &.hide {
+        display: none;
+      }
+
+      &::before {
+        position: absolute;
+        content: "";
+        margin-top: -14px;
+        margin-left: 10px;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent #fff transparent;
+      }
+
+      .app-search-popover-icon {
+        width: 16px;
+        height: 16px;
+        fill: $primary-color;
+      }
+
+      .app-search-calendar {
+        color: $secondary-color;
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.app-date-modal {
+  .modal-dialog {
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content {
+    display: flex;
+    justify-content: center;
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+}

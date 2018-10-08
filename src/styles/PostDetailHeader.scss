@@ -1,0 +1,41 @@
+@import "./variable";
+@import "./mixins";
+
+.app-post-detail-header {
+  padding: 16px;
+
+  .app-post-channel {
+    @include channelNameRule;
+  }
+
+  .app-post-title {
+    @include postTitleRule;
+  }
+
+  .app-post-author {
+    display: flex;
+    flex-wrap: nowrap;
+
+    .app-post-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .app-post-author-info {
+      flex-grow: 1;
+      margin-left: 12px;
+
+      .app-post-username {
+        color: $grey-color;
+        font-size: 14px;
+        display: block;
+      }
+
+      .app-post-publish {
+        color: $light-grey-color;
+        font-size: 12px;
+      }
+    }
+  }
+}

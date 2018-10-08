@@ -1,0 +1,47 @@
+@import "./variable";
+@import "./mixins";
+
+.app-post-comment {
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 8px 0;
+
+  & > .app-post-comment-avatar {
+    width: 32px;
+    min-width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+  }
+
+  & > .app-post-comment-content {
+    flex-grow: 1;
+
+    & > .app-post-comment-user {
+      & > b {
+        font-size: 12px;
+        margin-right: 12px;
+        color: $secondary-color;
+      }
+
+      & > span {
+        font-size: 10px;
+        color: $light-grey-color;
+      }
+    }
+
+    & > p {
+      font-size: 14px;
+      color: $grey-color;
+    }
+  }
+
+  & > .app-post-comment-reply-icon {
+    cursor: pointer;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    margin-left: 12px;
+    fill: $primary-color;
+  }
+}

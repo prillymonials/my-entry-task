@@ -1,0 +1,98 @@
+@import "./variable";
+@import "./mixins";
+
+.app-post-detail-wrapper {
+  margin: 16px;
+
+  .app-post-gallery {
+    display: flex;
+    overflow: auto;
+
+    & > img {
+      max-height: 100px;
+      padding: 0 4px;
+      margin-bottom: 6px;
+      border-radius: 15px;
+    }
+  }
+
+  .app-post-description {
+    margin-top: 6px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $divider-color;
+  }
+
+  .app-post-calendar,
+  .app-post-location {
+    margin-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid $divider-color;
+
+    & > h5 {
+      margin: 0;
+      border-left: 4px solid $secondary-color;
+      padding-left: 4px;
+      font-size: 16px;
+      font-weight: bolder;
+      color: $secondary-color;
+      margin-bottom: 16px;
+    }
+  }
+
+  .app-post-calendar {
+    & > .app-post-calendar-wrapper {
+      display: flex;
+
+      & > .app-post-calendar-detail {
+        flex-grow: 1;
+
+        &:not(:last-child) {
+          border-right: 1px solid $divider-color;
+        }
+
+        & > p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 16px;
+          color: $grey-color;
+
+          & > .app-post-calendar-icon {
+            width: 18px;
+            height: 18px;
+            fill: $primary-color;
+            margin-right: 5px;
+          }
+        }
+
+        & > h1 {
+          text-align: center;
+          margin: 0;
+          color: $primary-color;
+          font-size: 32px;
+
+          & > small {
+            color: $primary-color;
+            margin-left: 8px;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .app-post-location {
+    & > b,
+    & > span {
+      display: block;
+      font-size: 14px;
+      color: $grey-color;
+    }
+
+    & > img {
+      margin-top: 8px;
+      max-width: 100%;
+      border-radius: 15px;
+    }
+  }
+}

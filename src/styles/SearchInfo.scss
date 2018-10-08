@@ -1,0 +1,35 @@
+@import "./variable";
+@import "./mixins";
+
+.app-search-info {
+  padding: 12px 15px 11px 27px;
+  background-color: $search-result-background-color;
+
+  .app-search-result-label {
+    color: $secondary-color;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 8px;
+    display: inline-block;
+    font-weight: bolder;
+  }
+
+  .app-search-clear-btn {
+    background-color: $primary-color;
+    color: $grey-color;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 25px;
+    font-size: 10px;
+    float: right;
+    font-weight: bolder;
+
+    @include buttonRule;
+  }
+
+  .app-search-description {
+    display: block;
+    font-size: 12px;
+    color: $grey-color;
+  }
+}

@@ -1,0 +1,13 @@
+@import "./variable";
+
+.app-post {
+  display: flex;
+  flex-direction: column;
+
+  .app-post-loading {
+    text-align: center;
+    padding: 12px 0;
+    font-size: 14px;
+    color: $secondary-color;
+  }
+}

@@ -1,0 +1,15 @@
+@import "./variable";
+@import "./mixins";
+
+.app-login {
+  @include fullScreenRule;
+  background: url("/assets/background.jpg") center center no-repeat;
+  background-size: cover;
+
+  & > .app-login-bg-color {
+    @include fullScreenRule;
+    display: flex;
+    flex-direction: column;
+    background-color: $login-background;
+  }
+}

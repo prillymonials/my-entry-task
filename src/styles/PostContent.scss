@@ -1,0 +1,92 @@
+@import "./variable";
+@import "./mixins";
+
+.app-post-container {
+  padding: 16px;
+  border-bottom: 1px solid $divider-color;
+
+  .app-post-header {
+    .app-post-avatar {
+      @include avatarImageRule;
+      margin-right: 8px;
+    }
+
+    .app-post-username {
+      padding-top: 3px;
+      font-size: 12px;
+      font-weight: bolder;
+      color: $grey-color;
+    }
+
+    .app-post-channel {
+      float: right;
+      @include channelNameRule;
+    }
+  }
+
+  .app-post-title {
+    @include postTitleRule;
+    cursor: pointer;
+  }
+
+  .app-post-date {
+    display: flex;
+
+    .app-post-date-icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      fill: $secondary-color;
+    }
+
+    span {
+      font-size: 12px;
+      color: $secondary-color;
+    }
+  }
+
+  .app-post-description {
+    margin-top: 12px;
+    line-height: 20px;
+    font-size: 14px;
+  }
+
+  .app-post-footer {
+    margin-top: 12px;
+
+    .app-post-going,
+    .app-post-like,
+    .app-post-not-going,
+    .app-post-not-like {
+      width: 12px;
+      height: 12px;
+      margin-right: 5px;
+    }
+
+    .app-post-going {
+      fill: $active-color;
+    }
+
+    .app-post-not-going,
+    .app-post-not-like {
+      fill: $placeholder-color;
+    }
+
+    .app-post-like,
+    .app-post-not-like {
+      margin-left: 30px;
+    }
+
+    .app-post-like {
+      fill: $like-color;
+    }
+
+    .app-post-description {
+      color: $tertiary-color;
+    }
+
+    .app-post-not-description {
+      color: $placeholder-color;
+    }
+  }
+}

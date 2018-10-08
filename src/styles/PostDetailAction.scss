@@ -1,0 +1,47 @@
+@import "./variable";
+@import "./mixins";
+
+.post-action-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-action-button-icon {
+  flex-grow: 1;
+  background-color: transparent;
+  @include buttonRule;
+
+  & > svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.post-action-like > .fill {
+  fill: $primary-color;
+}
+
+.post-action-button-going {
+  flex-grow: 2;
+  font-size: 14px;
+  background-color: $primary-color;
+  height: 100%;
+  @include buttonRule;
+  color: $dark-green-color;
+
+  &.going {
+    color: $secondary-color;
+
+    & > svg {
+      fill: $secondary-color;
+    }
+  }
+
+  & > svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    fill: $dark-green-color;
+  }
+}

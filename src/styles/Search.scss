@@ -1,0 +1,22 @@
+@import "./variable";
+
+.app-search-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $tertiary-color;
+  overflow-x: hidden;
+  transition: 0.5s;
+
+  @media screen and (min-height: 440px) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+
+  &.open {
+    width: 240px;
+  }
+}

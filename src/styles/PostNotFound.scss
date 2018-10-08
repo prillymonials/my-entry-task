@@ -1,0 +1,18 @@
+@import "./variable";
+
+.app-post-not-found {
+  margin-top: 100px;
+  text-align: center;
+
+  .app-post-not-found-icon {
+    fill: $light-purple-color;
+    width: 60px;
+    height: 60px;
+  }
+
+  .app-post-not-found-label {
+    font-size: 12px;
+    margin-top: 8px;
+    color: $light-grey-color;
+  }
+}

@@ -1,0 +1,79 @@
+@import "./variable";
+
+$hide-position: -25px;
+
+/* Source: https://www.w3schools.com/howto/howto_js_snackbar.asp */
+/* The snackbar - position it at the bottom and in the middle of the screen */
+.app-toast {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  width: 100%; /* Set a default minimum width */
+  background-color: $toast-background-color; /* Black background color */
+  color: $secondary-color; /* White text color */
+  text-align: center; /* Centered text */
+  padding: 5px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 100; /* Add a z-index if needed */
+  left: 0; /* Make left-most */
+  top: 0; /* Make top-most */
+  font-weight: bolder;
+
+  &.post {
+    top: 90px;
+  }
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+.app-toast.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar. 
+ However, delay the fade out process for 2.5 seconds */
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+
+  &.post {
+    animation: fadeinpost 0.5s, fadeoutpost 0.5s 2.5s;
+  }
+}
+
+@keyframes fadein {
+  from {
+    top: $hide-position;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 0;
+    opacity: 1;
+  }
+  to {
+    top: $hide-position;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeinpost {
+  from {
+    top: (90px + $hide-position);
+    opacity: 0;
+  }
+  to {
+    top: 90px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeoutpost {
+  from {
+    top: 90px;
+    opacity: 1;
+  }
+  to {
+    top: (90px + $hide-position);
+    opacity: 0;
+  }
+}

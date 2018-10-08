@@ -1,0 +1,9 @@
+@import "./mixins";
+
+.app-container {
+  @include fullScreenRule;
+
+  &.open {
+    overflow: hidden;
+  }
+}

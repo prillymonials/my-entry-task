@@ -1,0 +1,14 @@
+@import "./mixins";
+
+.app-main-layout {
+  @include fullScreenRule;
+  transition: margin-left 0.5s;
+
+  &.open {
+    margin-left: 240px;
+  }
+
+  .app-main-content {
+    padding-top: 40px;
+  }
+}

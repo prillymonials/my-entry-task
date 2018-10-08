@@ -1,0 +1,30 @@
+@import "./variable";
+@import "./mixins";
+
+.app-post-participant {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid $divider-color;
+
+  & > .app-post-summary {
+    margin-top: 2px;
+    min-width: 100px;
+    color: $grey-color;
+
+    & > .app-post-summary-icon {
+      width: 16px;
+      height: 16px;
+      margin-right: 5px;
+      fill: $placeholder-color;
+    }
+  }
+
+  & > .app-post-summary-image {
+    & > img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      margin: 4px;
+    }
+  }
+}

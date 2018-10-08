@@ -1,0 +1,55 @@
+@import "./variable";
+@import "./mixins";
+
+.app-search-btn {
+  background: $primary-color;
+  border: none;
+  width: 100%;
+  margin-top: 20px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  @include buttonRule;
+
+  &:disabled {
+    background: $light-grey-color;
+
+    .app-search-icon {
+      fill: $disabled-label-color !important;
+    }
+
+    .app-search-label {
+      color: $disabled-label-color !important;
+    }
+  }
+
+  .app-search-search-label {
+    display: flex;
+    align-items: center;
+
+    .app-search-icon {
+      width: 14px;
+      height: 14px;
+      margin-right: 4px;
+      fill: $tertiary-color;
+    }
+
+    .app-search-label {
+      font-size: 14px;
+      font-weight: bolder;
+      color: $tertiary-color;
+    }
+  }
+
+  .app-search-search-description {
+    font-size: 10px;
+    color: $tertiary-color;
+
+    &.hide {
+      display: none;
+    }
+  }
+}

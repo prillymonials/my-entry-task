@@ -1,0 +1,46 @@
+@import "./variable";
+@import "./mixins";
+
+.post-comment-close {
+  background-color: transparent;
+  padding: 12px;
+  @include buttonRule;
+
+  & > svg {
+    width: 20px;
+    height: 20px;
+    fill: $primary-color;
+  }
+}
+
+.post-comment-input {
+  height: 32px;
+  flex-grow: 1;
+  margin: 0 12px 0 4px;
+  border: none;
+  padding: 0 10px;
+  border-radius: 25px;
+  color: $secondary-color;
+
+  &::placeholder {
+    color: $light-purple-color;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.post-comment-send {
+  height: 100%;
+  padding: 0 16px;
+  background-color: $primary-color;
+  @include buttonRule;
+
+  & > svg {
+    width: 32px;
+    height: 32px;
+    margin-top: 2px;
+    fill: $secondary-color;
+  }
+}

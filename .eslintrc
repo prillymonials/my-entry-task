@@ -1,0 +1,13 @@
+{
+  "extends": ["airbnb"],
+  "rules": {
+    "react/prefer-stateless-function": false,
+    "jsx-a11y/anchor-is-valid": false
+  },
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  }
+}
