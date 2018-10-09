@@ -3,14 +3,14 @@ export default function login(request, response) {
 
   if (email.length === 0) {
     return response
-      .body(JSON.stringify({ error: '400001#EmailRequired' }))
+      .body(JSON.stringify({ error: 'Email is required.' }))
       .header('Content-Type', 'application/json')
       .status(400);
   }
 
   if (password.length === 0) {
     return response
-      .body(JSON.stringify({ error: '400002#PasswordRequired' }))
+      .body(JSON.stringify({ error: 'Password is required.' }))
       .header('Content-Type', 'application/json')
       .status(400);
   }
@@ -31,7 +31,7 @@ export default function login(request, response) {
   }
 
   return response
-    .body(JSON.stringify({ error: '400003#InvalidLogin' }))
+    .body(JSON.stringify({ error: 'Invalid username or password.' }))
     .header('Content-Type', 'application/json')
     .status(400);
 }

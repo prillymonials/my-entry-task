@@ -4,6 +4,7 @@ import toast from './toast';
 import post from './post';
 import route from './route';
 import search from './search';
+import myPost from './myPost';
 
 const reducers = combineReducers({
   auth,
@@ -11,6 +12,7 @@ const reducers = combineReducers({
   post,
   route,
   search,
+  myPost,
 });
 
 export default reducers;

@@ -6,6 +6,7 @@ import CommentOutlineIcon from '../assets/svg/comment-outline.svg';
 import InfoIcon from '../assets/svg/info.svg';
 import PeopleIcon from '../assets/svg/people.svg';
 import CommentIcon from '../assets/svg/comment.svg';
+import '../styles/PostNavigation.scss';
 
 const PostNavigation = ({ navigation }) => (
   <Fragment>

@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { doLogout } from '../actions/auth';
-import { setSidebar, goToHome } from '../actions/route';
+import { setSidebar, goToHome, goToMe } from '../actions/route';
 import { fetchChannelList } from '../actions/search';
 import Post from './Post';
 import MainHeader from '../components/MainHeader';
 import Search from './Search';
 import PostDetail from './PostDetail';
 import '../styles/MainLayout.scss';
+import MyPost from './MyPost';
 
 class MainLayout extends Component {
   static propTypes = {
@@ -19,6 +20,7 @@ class MainLayout extends Component {
     setSidebar: PropTypes.func.isRequired,
     fetchChannelList: PropTypes.func.isRequired,
     goToHome: PropTypes.func.isRequired,
+    goToMe: PropTypes.func.isRequired,
   };
 
   componentDidMount() {
@@ -36,11 +38,6 @@ class MainLayout extends Component {
     setSidebarProps(!isSidebarOpen);
   };
 
-  handleGoToHome = () => {
-    const { goToHome: goToHomeProps } = this.props;
-    goToHomeProps();
-  };
-
   renderByRoute() {
     const { route } = this.props;
 
@@ -49,6 +46,8 @@ class MainLayout extends Component {
         return <Post />;
       case 'detail':
         return <PostDetail />;
+      case 'me':
+        return <MyPost />;
       default:
         return null;
     }
@@ -56,7 +55,12 @@ class MainLayout extends Component {
 
   render() {
     const {
-      avatarUrl, handleLogout, isSidebarOpen, route,
+      avatarUrl,
+      handleLogout,
+      isSidebarOpen,
+      route,
+      goToHome: handleGoToHome,
+      goToMe: handleGoToMe,
     } = this.props;
 
     const openClassName = isSidebarOpen ? 'open' : '';
@@ -68,7 +72,8 @@ class MainLayout extends Component {
           userAvatarUrl={avatarUrl}
           handleLogout={handleLogout}
           handleToggleSidebar={this.handleToggleSidebar}
-          handleGoToHome={this.handleGoToHome}
+          handleGoToHome={handleGoToHome}
+          handleGoToMe={handleGoToMe}
         />
         <Search />
         <div className="app-main-content">{this.renderByRoute()}</div>
@@ -87,6 +92,7 @@ const mapDispatchToProps = {
   setSidebar,
   fetchChannelList,
   goToHome,
+  goToMe,
 };
 
 export default connect(

@@ -21,7 +21,6 @@ const PostCommentContent = ({ comment, handleReply }) => (
 );
 
 PostCommentContent.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   comment: PropTypes.any.isRequired,
   handleReply: PropTypes.func.isRequired,
 };

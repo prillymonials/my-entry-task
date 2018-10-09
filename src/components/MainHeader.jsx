@@ -12,6 +12,7 @@ const MainHeader = ({
   handleLogout,
   handleToggleSidebar,
   handleGoToHome,
+  handleGoToMe,
 }) => (
   <div className="app-main-header">
     {route === 'home' ? (
@@ -20,7 +21,11 @@ const MainHeader = ({
       <HomeIcon className="app-left-icon" onClick={handleGoToHome} />
     )}
     <LogoIcon className="app-logo" />
-    <UserMenuHeader avatarUrl={userAvatarUrl} handleLogout={handleLogout} />
+    <UserMenuHeader
+      avatarUrl={userAvatarUrl}
+      handleLogout={handleLogout}
+      handleGoToMe={handleGoToMe}
+    />
   </div>
 );
 
@@ -30,6 +35,7 @@ MainHeader.propTypes = {
   handleLogout: PropTypes.func.isRequired,
   handleToggleSidebar: PropTypes.func.isRequired,
   handleGoToHome: PropTypes.func.isRequired,
+  handleGoToMe: PropTypes.func.isRequired,
 };
 
 export default MainHeader;

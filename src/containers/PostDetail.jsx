@@ -17,9 +17,7 @@ import '../styles/PostDetail.scss';
 
 class PostDetail extends Component {
   static propTypes = {
-    // eslint-disable-next-line react/forbid-prop-types
     post: PropTypes.any.isRequired,
-    // eslint-disable-next-line react/forbid-prop-types
     user: PropTypes.any,
     toastMessage: PropTypes.string,
     isCommenting: PropTypes.bool.isRequired,
@@ -112,20 +110,20 @@ class PostDetail extends Component {
 
   handleSendComment = () => {
     const {
-      submitComment,
-      triggerToast,
-      post,
-      user,
+      submitComment, triggerToast, post, user,
     } = this.props;
     const commentId = post.comments.length + 1;
 
-    submitComment({
-      id: commentId,
-      username: user.username,
-      postAt: 'now',
-      avatarUrl: user.avatarUrl,
-      comment: this.commentInputRef && this.commentInputRef.value,
-    }, 'Comment published.');
+    submitComment(
+      {
+        id: commentId,
+        username: user.username,
+        postAt: 'now',
+        avatarUrl: user.avatarUrl,
+        comment: this.commentInputRef && this.commentInputRef.value,
+      },
+      'Comment published.',
+    );
     triggerToast();
     this.handleCloseComment();
   };
@@ -134,13 +132,13 @@ class PostDetail extends Component {
     const { setGoing, triggerToast } = this.props;
     setGoing(!going, `Successfully to ${going ? 'leave' : 'join'} to the event.`);
     triggerToast();
-  }
+  };
 
   handleSetLike = (like) => {
     const { setLike, triggerToast } = this.props;
     setLike(!like, `Succesfully ${like ? 'un-' : ''}liking this event.`);
     triggerToast();
-  }
+  };
 
   render() {
     const { post, isCommenting, toastMessage } = this.props;

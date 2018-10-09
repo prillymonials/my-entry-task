@@ -1,0 +1,49 @@
+@import "./variable";
+@import "./mixins";
+
+.app-my-post {
+  .app-my-post-header {
+    margin-top: 36px;
+    margin-bottom: 24px;
+    text-align: center;
+
+    & > .app-my-post-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      border: 3px solid $placeholder-color;
+    }
+
+    & > .app-my-post-username {
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-size: 24px;
+      color: $grey-color;
+    }
+
+    & > .app-my-post-email {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & > .app-my-post-email-icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 6px;
+        fill: $secondary-color;
+      }
+
+      & > span {
+        font-size: 14px;
+        color: $secondary-color;
+      }
+    }
+  }
+
+  .app-my-post-loading {
+    text-align: center;
+    padding: 12px 0;
+    font-size: 14px;
+    color: $secondary-color;
+  }
+}

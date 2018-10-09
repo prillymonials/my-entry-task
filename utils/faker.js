@@ -25,7 +25,7 @@ posts.push({
   id: 1,
   title: 'Katy Perry Super Concert World Tour - I Kissed A Girl',
   createdBy: 'Katy Perry',
-  createdAvatarUrl: '/assets/avatar03.png',
+  createdAvatarUrl: '/assets/avatar02.png',
   channelName: 'Concert',
   startAt: startAt.getTime(),
   endAt: endAt.getTime(),
@@ -45,19 +45,21 @@ for (let id = 2; id <= 53; id++) {
   endAt.setDate(startAt.getDate() + faker.random.number(31));
   endAt.setHours(startAt.getHours() + faker.random.number(24), 0, 0, 0);
 
+  const position = faker.random.number(5);
+
   posts.push({
     id,
     title: faker.commerce.productName(),
-    createdBy: faker.random.arrayElement(creators),
-    createdAvatarUrl: `/assets/avatar0${faker.random.number({ min: 1, max: 6 })}.png`,
+    createdBy: creators[position],
+    createdAvatarUrl: `/assets/avatar0${position + 1}.png`,
     channelName: faker.random.arrayElement(channels),
     startAt: startAt.getTime(),
     endAt: endAt.getTime(),
     description: faker.lorem.paragraphs(4, ''),
     totalUserGoing: 34,
     totalUserLikes: 7,
-    isUserGoing: false,
-    isUserLike: false,
+    isUserGoing: faker.random.boolean(),
+    isUserLike: faker.random.boolean(),
   });
 }
 

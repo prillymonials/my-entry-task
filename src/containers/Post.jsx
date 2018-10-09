@@ -39,9 +39,9 @@ class Post extends Component {
   };
 
   componentDidMount() {
-    const { requestPost, postData } = this.props;
+    const { requestPost, postData, isLastItem } = this.props;
 
-    if (postData.length === 0) {
+    if (postData.length === 0 && !isLastItem) {
       requestPost(this.addScrollEvent);
     }
   }

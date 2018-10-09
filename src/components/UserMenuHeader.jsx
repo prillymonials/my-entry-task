@@ -8,7 +8,7 @@ CustomTitle.propTypes = {
   avatarUrl: PropTypes.string.isRequired,
 };
 
-const UserMenuHeader = ({ avatarUrl, handleLogout }) => (
+const UserMenuHeader = ({ avatarUrl, handleLogout, handleGoToMe }) => (
   <DropdownButton
     bsStyle="default"
     title={<CustomTitle avatarUrl={avatarUrl} />}
@@ -17,7 +17,7 @@ const UserMenuHeader = ({ avatarUrl, handleLogout }) => (
     pullRight
     className="app-user-dropdown"
   >
-    <MenuItem eventKey="1">My Post</MenuItem>
+    <MenuItem onClick={handleGoToMe}>My Activities</MenuItem>
     <MenuItem divider />
     <MenuItem onClick={handleLogout}>Logout</MenuItem>
   </DropdownButton>
@@ -25,6 +25,7 @@ const UserMenuHeader = ({ avatarUrl, handleLogout }) => (
 UserMenuHeader.propTypes = {
   avatarUrl: PropTypes.string.isRequired,
   handleLogout: PropTypes.func.isRequired,
+  handleGoToMe: PropTypes.func.isRequired,
 };
 
 export default UserMenuHeader;
