@@ -1,6 +1,7 @@
 {
   "extends": ["airbnb"],
   "rules": {
+    "react/forbid-prop-types": false,
     "react/prefer-stateless-function": false,
     "jsx-a11y/anchor-is-valid": false
   },
